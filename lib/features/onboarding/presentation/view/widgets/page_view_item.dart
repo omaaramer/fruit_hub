@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/core/resources/app_text_style.dart';
+import 'package:fruit_hup/core/routing/routes.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -38,20 +40,29 @@ class PageViewItem extends StatelessWidget {
                 visible: isVisible,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text(
-                    S.of(context).next,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(AppRoutes.loginView);
+                    },
+                    child: Text(
+                      S.of(context).next,
+                      style: AppTextStyles.semiBold13,
+                    ),
                   ),
                 ),
               ),
             ],
           ),
         ),
-        const SizedBox(height: 54),
+        const SizedBox(height: 54), //TODO responsive ui
         title,
-        const SizedBox(height: 24),
+
+        const SizedBox(height: 24), //TODO responsive ui
         Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(subtitle, textAlign: TextAlign.center),
+          padding: const EdgeInsets.symmetric(horizontal: 37.0),
+          child: Text(subtitle,
+              textAlign: TextAlign.center, style: AppTextStyles.semiBold13),
         ),
       ],
     );

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruit_hup/core/routing/routes.dart';
-
+import 'core/resources/app_colors.dart';
 import 'core/routing/app_router.dart';
-import 'features/splash/presentation/view/splash_view.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -16,6 +15,12 @@ class FruitHub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Cairo',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.green,
+        ),
+      ),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -26,7 +31,7 @@ class FruitHub extends StatelessWidget {
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.generateRoute,
-      initialRoute: Routes.splash,
+      initialRoute: AppRoutes.splash,
     );
   }
 }

@@ -29,18 +29,18 @@ class _SplashViewBodyState extends State<SplashViewBody> {
               ? MainAxisAlignment.end
               : MainAxisAlignment.start,
           children: [
-            SvgPicture.asset(Assets.assetsImagesPlant),
+            SvgPicture.asset(Assets.imagesPlant),
           ],
         ),
-        SvgPicture.asset(Assets.assetsImagesAppLogo),
-        SvgPicture.asset(Assets.assetsImagesSlpashBottom, fit: BoxFit.fill),
+        SvgPicture.asset(Assets.imagesAppLogo),
+        SvgPicture.asset(Assets.imagesSlpashBottom, fit: BoxFit.fill),
       ],
     );
   }
 
   void excuteNavigation() {
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, Routes.onBoardingView);
+      Navigator.pushReplacementNamed(context, AppRoutes.onBoardingView);
     });
   }
 }

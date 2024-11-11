@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/core/resources/app_colors.dart';
+import 'package:fruit_hup/core/resources/app_text_style.dart';
 import 'package:fruit_hup/core/resources/assets.dart';
 
 import 'page_view_item.dart';
@@ -12,31 +14,36 @@ class CustomPageView extends StatelessWidget {
       controller: pageController,
       children: [
         PageViewItem(
-          isVisible:
-              (pageController.hasClients ? pageController.page!.round() : 0) ==
-                  0,
+          isVisible: true,
           subtitle:
               'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
-          image: Assets.assetsImagesOnboardingImage1,
-          backgroundImage: Assets.assetsImagesOnboardingBackground1,
-          title: const Row(
+          image: Assets.imagesOnboardingImage1,
+          backgroundImage: Assets.imagesOnboardingBackground1,
+          title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('مرحبًا بك في'),
-              Text('HUB'),
-              Text('Fruit'),
+              const Text(
+                'مرحبًا بك في',
+                style: AppTextStyles.bold23,
+              ),
+              Text(
+                '  HUB',
+                style: AppTextStyles.bold23.copyWith(color: AppColors.yellow),
+              ),
+              Text(
+                'Fruit',
+                style: AppTextStyles.bold23.copyWith(color: AppColors.green),
+              ),
             ],
           ),
         ),
-        PageViewItem(
-          isVisible:
-              (pageController.hasClients ? pageController.page!.round() : 0) ==
-                  0,
+        const PageViewItem(
+          isVisible: false,
           subtitle:
               'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
-          image: Assets.assetsImagesOnboardingImage2,
-          backgroundImage: Assets.assetsImagesOnboardingBackground2,
-          title: const Row(
+          image: Assets.imagesOnboardingImage2,
+          backgroundImage: Assets.imagesOnboardingBackground2,
+          title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('ابحث وتسوق'),

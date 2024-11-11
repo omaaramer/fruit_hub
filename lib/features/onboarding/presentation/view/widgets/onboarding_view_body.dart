@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/resources/app_colors.dart';
 import 'package:fruit_hup/core/resources/constants.dart';
+import 'package:fruit_hup/core/routing/routes.dart';
 import 'package:fruit_hup/core/widgets/custom_button.dart';
 import 'package:fruit_hup/features/onboarding/presentation/view/widgets/custom_page_view.dart';
 
@@ -54,7 +55,9 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
             padding: const EdgeInsets.symmetric(horizontal: kHorizontalPadding),
             child: CustomButton(
               text: "ابدأ الان",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed(AppRoutes.loginView);
+              },
             ),
           ),
         ),
